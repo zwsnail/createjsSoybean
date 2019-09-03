@@ -1,0 +1,120 @@
+<html>
+<head>
+	<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
+	<script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
+	<script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+	<script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
+	<script language="javascript" src="script/page6.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+
+	
+
+	<style>
+			body {
+			  margin: 0;
+			  padding: 15px;
+			  background-color: #fff;
+			}
+			canvas{
+			  /* border: solid 2px #000; */
+			  background-color: #fff;
+			  width:50%;
+			  float: left;
+			  /* margin: 0px auto 0px auto; */
+			  margin-left: 1px;
+			  padding-left: 0;
+			  padding-right: 0;
+			}
+			#button1 {
+				background-color: white;
+    			bottom: 0;
+				display: inline-block;
+    			position: fixed;
+				/* position: absolute; */
+  				left: 10px;
+				color: black;
+				border: 2px solid #555555;
+				font-size: 20px;
+				margin: 5px 20px;
+				transition-duration: 0.4s;
+    			cursor: pointer;
+				padding: 7px 15px;
+			}
+			#button2 {
+				background-color: white;
+    			bottom: 0;
+				display: inline-block;
+    			position: fixed;
+				/* position: absolute; */
+  				left: 150px;
+				color: black;
+				border: 2px solid #555555;
+				font-size: 20px;
+				margin: 5px 20px;
+				transition-duration: 0.4s;
+    			cursor: pointer;
+				padding: 7px 15px;
+			}
+
+			#button1:hover {
+				background-color: #555555;
+				color: white;
+			}
+			#button2:hover {
+				background-color: #555555;
+				color: white;
+			}
+		  </style>
+
+</head>
+<body onload="init()">
+
+		
+		<canvas id="stage-canvas" width="900" height="600" ></canvas>
+		<canvas id="stage2" width="300" height="600" ></canvas>
+
+	
+	<button id="button1" type="button" onclick="window.location.href='page5.html'">previous <i class='far fa-hand-point-left'></i></button>
+	<button id="button2" type="button" onclick="window.location.href='page7.html'">next <i class='far fa-hand-point-right'></i></button>
+
+
+</body>
+
+
+<script>
+		var ctx = document.getElementById('stage2').getContext('2d');
+		var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: 'bar',
+	
+		// The data for our dataset
+			data: {
+				labels: ['Soybean','Corn', 'Wheat', 'Nuts', 'wheat'],
+				datasets: [{
+					label: 'Top U.S. AgrIcultural Export in 2017($Billion)',
+					backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+					data: [21.6, 9.1, 8.5, 6.1]
+					}]
+				},
+	
+				options: {
+					responsive: false,
+					maintainAspectRatio: false,
+					title: {
+							display: true,
+							text: 'Agracultural Products Export of US'
+						},
+
+					animation: {
+						duration: 5000,
+						easing:'easeOutBounce',
+						
+            			
+        			}	
+			},
+		});
+</script>
+</html>
